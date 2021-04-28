@@ -8,6 +8,9 @@ use App\Http\Requests\AskQuestionRequest;
 
 class QuestionsController extends Controller
 {
+    public function _contruct(){
+        $this->middleware('auth',['except' => ['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -64,9 +67,16 @@ class QuestionsController extends Controller
      */
     public function edit(Question $question)
     {
+        
+        /*This code for authorizing using gates
+
         if(\Gate::denies('update-question',$question)){
             abort(403,"Access denied");
-        }
+        }*/
+
+        //then this code for authorizing using policies
+        $this->authorize("update",$question);
+        
         return view("questions.edit",compact('question'));
 
     }
@@ -80,9 +90,15 @@ class QuestionsController extends Controller
      */
     public function update(AskQuestionRequest $request, Question $question)
     {
+        /*This code for authorizing using gates
+
         if(\Gate::denies('update-question',$question)){
             abort(403,"Access denied");
-        }
+        }*/
+
+        //then this code for authorizing using policies
+        $this->authorize("update",$question);
+        
         $question->update($request->only('title','body'));
         return redirect('/questions')->with('success',"Your question has been updated");
     }
@@ -95,9 +111,15 @@ class QuestionsController extends Controller
      */
     public function destroy(Question $question)
     {
+        /*This code for authorizing using gates
+
         if(\Gate::denies('delete-question',$question)){
             abort(403,"Access denied");
-        }
+        }*/
+
+        //then this code for authorizing using policies
+        $this->authorize("delete",$question);
+        
         $question->delete();
 
         return redirect('/questions')->with('success',"Your question has been deleted");
