@@ -2,7 +2,9 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <h3>Your Answer</h3>
+            <div class="card-title">
+              <h3>Your Answer</h3>
+            </div>            
           </div>
           <hr>
           <form action="{{route('questions.answers.store',$question->id)}}" method="POST">
