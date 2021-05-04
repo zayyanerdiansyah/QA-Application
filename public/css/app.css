@@ -16090,8 +16090,8 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?efbd5d20e407bbf85f2b3087ee67bfa1);
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?efbd5d20e407bbf85f2b3087ee67bfa1) format("embedded-opentype"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?ada6e6df937f7e5e8b790dfea07109b7) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff?c6ec080084769a6d8a34ab35b77999cd) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?07c3313b24f7b1ca85ee99b4fa7db55e) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg?13de59f1a36b6cb4bca0050160ff0e41) format("svg");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?efbd5d20e407bbf85f2b3087ee67bfa1);
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?efbd5d20e407bbf85f2b3087ee67bfa1) format("embedded-opentype"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?ada6e6df937f7e5e8b790dfea07109b7) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff?c6ec080084769a6d8a34ab35b77999cd) format("woff"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?07c3313b24f7b1ca85ee99b4fa7db55e) format("truetype"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg?13de59f1a36b6cb4bca0050160ff0e41) format("svg");
 }
 .fa,
 .fas {

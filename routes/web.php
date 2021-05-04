@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\AnswersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,14 @@ Route::get('/', function () {
 });
 
 Route::resource('questions',QuestionsController::class)->except('show');
+Route::resource('questions.answers',AnswersController::class)->only('store','edit','update','destroy');
 Route::get('/questions/{slug}',[QuestionsController::class,'show'])->name('questions.show');
+
+
+
+
+
+
 
 Auth::routes();
 
