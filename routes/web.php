@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::resource('questions',QuestionsController::class)->except('show');
 Route::resource('questions.answers',AnswersController::class)->only('store','edit','update','destroy');
 Route::get('/questions/{slug}',[QuestionsController::class,'show'])->name('questions.show');
-
+Route::post('/answers/{answer}/accept',[AnswersController::class,'accept'])->name('answers.accept');
 
 
 

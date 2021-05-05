@@ -67,4 +67,17 @@ class AnswersController extends Controller
 
         return back()->with('success',"Your answer has been removed");
     }
+
+
+    /*
+    Method-method for Accepting Answer
+    **/
+
+    public function accept(Answer $answer)
+    {
+        $this->authorize('accept',$answer);
+        $answer->question->acceptBestAnswer($answer);
+
+        return back();
+    }
 }

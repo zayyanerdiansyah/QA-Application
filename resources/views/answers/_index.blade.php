@@ -21,11 +21,30 @@
                 <i class="fas fa-caret-down fa-2x">
                 </i>
               </a>
-              <a title="Mark this as best answer" class="{{$answer->status}} mt-2">
-                <i class="fas fa-check fa-lg">
-                </i>
-                <span class="favorites-count"></span>
-              </a>
+              @can('accept',$answer)
+                <a title="Mark this as best answer" 
+                   class="{{$answer->status}} mt-2"
+                   onclick="event.preventDefault();document.getElementById('accept-answer-{{ $answer->id }}').submit();"
+                   >
+                  <i class="fas fa-check fa-lg">
+                  </i>
+                  <span class="favorites-count"></span>
+                </a>
+                <form id="accept-answer-{{ $answer->id }}" action="{{route('answers.accept',$answer->id) }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+              @else
+                @if($answer->is_best)
+                  <a title="The question owner accepted this as best answer" 
+                       class="{{$answer->status}} mt-2"
+                       onclick="event.preventDefault();document.getElementById('accept-answer-{{ $answer->id }}').submit();"
+                       >
+                      <i class="fas fa-check fa-lg">
+                      </i>
+                      <span class="favorites-count"></span>
+                    </a>
+                @endif
+              @endcan
             </div>              
             <div class="media-body px-3">
               {!! $answer->body_html !!}
