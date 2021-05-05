@@ -21,7 +21,7 @@
                 <i class="fas fa-caret-down fa-2x">
                 </i>
               </a>
-              <a title="Click to mark as favorite answer" class="vote-accepted mt-2">
+              <a title="Mark this as best answer" class="{{ $answer->status}} mt-2">
                 <i class="fas fa-check fa-lg">
                 </i>
                 <span class="favorites-count"></span>
