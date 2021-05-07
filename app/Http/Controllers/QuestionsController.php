@@ -8,8 +8,8 @@ use App\Http\Requests\AskQuestionRequest;
 
 class QuestionsController extends Controller
 {
-    public function _contruct(){
-        $this->middleware('auth',['except' => ['index','show']]);
+    public function __construct(){
+        $this->middleware('auth',['except' => ['index','show','create']]);
     }
     /**
      * Display a listing of the resource.
@@ -43,7 +43,7 @@ class QuestionsController extends Controller
      */
     public function store(AskQuestionRequest $request)
     {
-        $request->user()->question()->create($request->only('title','body'));
+        $request->user()->questions()->create($request->only('title','body'));
         return redirect()->route('questions.index')->with('success',"Your question has been submitted");
     }
 
