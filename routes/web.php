@@ -18,9 +18,7 @@ use App\Http\Controllers\VoteAnswerController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [QuestionsController::class,'index']);
 
 Route::resource('questions',QuestionsController::class)->except('show');
 Route::resource('questions.answers',AnswersController::class)->only('store','edit','update','destroy');
