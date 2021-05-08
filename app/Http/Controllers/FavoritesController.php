@@ -16,14 +16,12 @@ class FavoritesController extends Controller
     {
     	$question->favorites()->attach(auth()->id());
 
-
     	return back();
     }
 
     public function destroy(Question $question)
     {
     	$question->favorites()->detach(auth()->id());
-
 
     	return back();
     }
